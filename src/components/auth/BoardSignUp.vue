@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div>signup</div>
 </template>
 
 <script>
