@@ -1,15 +1,15 @@
 <template>
   <li>
-    <div class="post-title">{{ postItem.title }}</div>
-    <div class="post-contents">{{ postItem.content }}</div>
-    <div class="post-time">{{ postItem.createDate }}</div>
+    <div class="post-title">{{ boardItem.title }}</div>
+    <div class="post-contents">{{ boardItem.content }}</div>
+    <div class="post-time">{{ boardItem.createDate }}</div>
   </li>
 </template>
 
 <script>
 export default {
   props: {
-    postItem: {
+    boardItem: {
       type: Object,
       required: true,
     },

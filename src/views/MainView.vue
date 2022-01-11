@@ -4,11 +4,11 @@
       <h1 class="page-header">전체 포스트</h1>
       <loading-spinner v-if="isLoading"></loading-spinner>
       <ul v-else>
-        <post-list-item
-          v-for="postItem in postItems"
-          :key="postItem.seq"
-          :postItem="postItem"
-        ></post-list-item>
+        <board-list-item
+          v-for="boardItem in BoardListItems"
+          :key="boardItem.seq"
+          :boardItem="boardItem"
+        ></board-list-item>
       </ul>
     </div>
     <router-link to="/add" class="create-button"
@@ -18,18 +18,18 @@
 </template>
 
 <script>
-import PostListItem from "../components/boards/BoardListItem.vue";
+import BoardListItem from "../components/boards/BoardListItem.vue";
 import LoadingSpinner from "../components/common/LoadingSpinner.vue";
 import { fetchPosts } from "../api/index";
 export default {
   components: {
-    PostListItem,
+    BoardListItem,
     LoadingSpinner,
   },
 
   data() {
     return {
-      postItems: [],
+      BoardListItems: [],
       isLoading: false,
     };
   },
@@ -38,7 +38,7 @@ export default {
       this.isLoading = true;
       const { data } = await fetchPosts();
       this.isLoading = false;
-      this.postItems = data.data.list;
+      this.BoardListItems = data.data.list;
     },
   },
   created() {

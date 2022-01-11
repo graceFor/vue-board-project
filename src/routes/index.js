@@ -24,7 +24,7 @@ export default new VueRouter({
     },
     {
       path: "/add",
-      component: () => import("../views/PostAddView.vue"),
+      component: () => import("../views/BoardAddView.vue"),
     },
     {
       path: "*",

@@ -1,15 +1,15 @@
 <template>
   <div class="main form-container">
-    <PostAddForm></PostAddForm>
+    <BoardAddForm></BoardAddForm>
   </div>
 </template>
 
 <script>
-import PostAddForm from "../components/add/PostAddForm.vue";
+import BoardAddForm from "../components/add/BoardAddForm.vue";
 
 export default {
   components: {
-    PostAddForm,
+    BoardAddForm,
   },
 };
 </script>

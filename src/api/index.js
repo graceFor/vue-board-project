@@ -25,9 +25,9 @@ function fetchPosts() {
   return instance.get("board/all");
 }
 
-// post 작성
-function createPost() {
-  return instance.post("board");
+// post 작성 API
+function createPost(postData) {
+  return instance.post("board/", postData);
 }
 
-export { registerUser, loginUser, fetchPosts };
+export { registerUser, loginUser, fetchPosts, createPost };
