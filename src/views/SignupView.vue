@@ -1,14 +1,14 @@
 <template>
   <div>
-    <BoardSignup></BoardSignup>
+    <BoardSignupForm></BoardSignupForm>
   </div>
 </template>
 
 <script>
-import BoardSignup from "@/components/auth/BoardSignup.vue";
+import BoardSignupForm from "../components/auth/BoardSignupForm.vue";
 export default {
   components: {
-    BoardSignup,
+    BoardSignupForm,
   },
 };
 </script>

@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import { loginUser } from "../../api/index";
 import { validateEmail } from "../../utils/validation";
 
 export default {
@@ -63,9 +62,7 @@ export default {
           email: this.email,
           password: this.password,
         };
-        const { data } = await loginUser(userData);
-        this.$store.commit("setToken", data.data.accessToken);
-        this.$store.commit("setUserEmail", this.email);
+        await this.$store.dispatch("LOGIN", userData);
         // 메인페이지로 이동
         this.$router.push("/main");
       } catch (error) {
