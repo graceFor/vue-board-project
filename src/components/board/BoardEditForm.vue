@@ -1,6 +1,6 @@
 <template>
   <div class="contents">
-    <h1 class="page-header">Create Board</h1>
+    <h1 class="page-header">Edit Board</h1>
     <div class="form-wrapper">
       <form class="form" @submit.prevent="submitForm">
         <div>
@@ -14,14 +14,13 @@
             Contents must be less than 200
           </p>
         </div>
-        <button type="submit" class="btn">Create</button>
+        <button type="submit" class="btn">Edit</button>
       </form>
     </div>
   </div>
 </template>
 
 <script>
-import { createPost } from "../../api/boards";
 export default {
   data() {
     return {
@@ -35,17 +34,7 @@ export default {
     },
   },
   methods: {
-    async submitForm() {
-      try {
-        const response = await createPost({
-          title: this.title,
-          content: this.content,
-        });
-        this.$router.push("/main");
-      } catch (error) {
-        console.log(error);
-      }
-    },
+    submitForm() {},
   },
 };
 </script>

@@ -27,6 +27,14 @@ export default new VueRouter({
       component: () => import("../views/BoardAddView.vue"),
     },
     {
+      path: "/board/:id",
+      component: () => import("../views/BoardView.vue"),
+    },
+    {
+      path: "/board/edit/:id",
+      component: () => import("../views/BoardEditView.vue"),
+    },
+    {
       path: "*",
       component: () => import("@/views/NotFoundView.vue"),
     },

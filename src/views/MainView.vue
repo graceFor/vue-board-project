@@ -8,6 +8,7 @@
           v-for="boardItem in BoardListItems"
           :key="boardItem.seq"
           :boardItem="boardItem"
+          @refresh="fetchData"
         ></board-list-item>
       </ul>
     </div>
@@ -20,7 +21,7 @@
 <script>
 import BoardListItem from "../components/boards/BoardListItem.vue";
 import LoadingSpinner from "../components/common/LoadingSpinner.vue";
-import { fetchPosts } from "../api/index";
+import { fetchBoards } from "../api/boards";
 export default {
   components: {
     BoardListItem,
@@ -36,7 +37,7 @@ export default {
   methods: {
     async fetchData() {
       this.isLoading = true;
-      const { data } = await fetchPosts();
+      const { data } = await fetchBoards();
       this.isLoading = false;
       this.BoardListItems = data.data.list;
     },
