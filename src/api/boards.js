@@ -16,8 +16,13 @@ function createPost(postData) {
   return boards.post("/", postData);
 }
 
+// board 수정 API
+function editBoard(id, postData) {
+  return boards.put(id, postData);
+}
+
 // board 삭제 API
 function deleteBoard(id) {
   return boards.delete(id);
 }
-export { fetchBoards, createPost, fetchBoard, deleteBoard };
+export { fetchBoards, createPost, fetchBoard, deleteBoard, editBoard };

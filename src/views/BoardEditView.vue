@@ -6,6 +6,7 @@
 
 <script>
 import BoardEditForm from "../components/board/BoardEditForm.vue";
+
 export default {
   components: {
     BoardEditForm,

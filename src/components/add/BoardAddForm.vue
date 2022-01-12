@@ -37,7 +37,7 @@ export default {
   methods: {
     async submitForm() {
       try {
-        const response = await createPost({
+        await createPost({
           title: this.title,
           content: this.content,
         });

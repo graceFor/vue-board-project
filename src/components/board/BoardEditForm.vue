@@ -21,11 +21,13 @@
 </template>
 
 <script>
+import { fetchBoard, editBoard } from "../../api/boards";
 export default {
   data() {
     return {
       title: "",
       content: "",
+      logMessage: "",
     };
   },
   computed: {
@@ -34,7 +36,25 @@ export default {
     },
   },
   methods: {
-    submitForm() {},
+    async submitForm() {
+      const id = this.$route.params.id;
+      console.log(id);
+      try {
+        await editBoard(id, {
+          title: this.title,
+          content: this.content,
+        });
+        this.$router.push("/main");
+      } catch (error) {
+        this.logMessage = error;
+      }
+    },
+  },
+  async created() {
+    const id = this.$route.params.id;
+    const { data } = await fetchBoard(id);
+    this.title = data.data.title;
+    this.content = data.data.content;
   },
 };
 </script>
